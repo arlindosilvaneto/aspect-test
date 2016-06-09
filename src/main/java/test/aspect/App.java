@@ -10,7 +10,12 @@ public class App {
     public static void main( String[] args ) {
         Tools tools = new Tools();
         
-        tools.callFirstTool();
-        tools.callSecondTool();
+        try {
+	        tools.callFirstTool("hello", "world");
+	        tools.callSecondTool("hello", "");
+	        tools.callSecondTool("hello", "world");
+        } catch(Exception ex) {
+        	
+        }
     }
 }

@@ -1,12 +1,18 @@
 package test.aspect.lib;
 
-public class Tools {
+import java.util.logging.Logger;
 
-	public void callFirstTool() {
-		
+import test.aspect.annotations.Validate;
+
+public class Tools {
+	final Logger logger = Logger.getAnonymousLogger();
+	
+	public void callFirstTool(String first, String last) {
+		logger.info("FIRST TOOL: " + first + " - " + last);
 	}
 	
-	public void callSecondTool() {
-		
+	@Validate
+	public void callSecondTool(String first, String last) {
+		logger.info("SECOND TOOL: " + first + " - " + last);
 	}
 }
