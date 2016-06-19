@@ -15,4 +15,14 @@ public class Tools {
 	public void callSecondTool(String first, String last) {
 		logger.info("SECOND TOOL: " + first + " - " + last);
 	}
+	
+	public void callThirdTool(String first) {
+		logger.info("THIRD TOOL: " + first);
+	}
+	
+	public String callTools() {
+		callFirstTool("oi", "mundo");
+		
+		return "First tool called";
+	}
 }

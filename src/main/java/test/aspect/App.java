@@ -14,6 +14,8 @@ public class App {
 	        tools.callFirstTool("hello", "world");
 	        tools.callSecondTool("hello", "");
 	        tools.callSecondTool("hello", "world");
+	        tools.callThirdTool("hello");
+	        tools.callTools();
         } catch(Exception ex) {
         	
         }
