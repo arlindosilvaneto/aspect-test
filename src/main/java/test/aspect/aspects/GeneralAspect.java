@@ -4,6 +4,7 @@ import java.util.logging.Logger;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -48,6 +49,14 @@ public class GeneralAspect {
 	 */
 	@AfterReturning(pointcut="call(* test.aspect.lib.Tools.*(..))", returning="result")
 	public void onCallTools(String result) {
-		logger.info("AFTER ADVICE: Tools chamado: " + result);
+		logger.info("AFTER RETURNING ADVICE: Tools chamado: " + result);
+	}
+	
+	/**
+	 * Advice for wildcard method on tools library.
+	 */
+	@After("execution(* test.aspect.lib.Tools.call*(..))")
+	public void callToolCalled() {
+		logger.info("AFTER ADVICE: Tools callable called");
 	}
 }
